@@ -23,10 +23,8 @@ class Haikus extends React.Component {
   render() {
     var haikus = this.state.haikus.map((haiku) => {
       return (
-        <li>
-          <p>{haiku.line1}</p>
-          <p>{haiku.line2}</p>
-          <p>{haiku.line3}</p>
+        <li key={haiku.id}>
+          <Haiku key={haiku.id} line1={haiku.line1} line2={haiku.line2} line3={haiku.line3} />
         </li>
       );
     })
