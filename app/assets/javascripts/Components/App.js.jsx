@@ -2,6 +2,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.properPage = this.properPage.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       currentPage: 'index'
     }
@@ -13,9 +14,13 @@ class App extends React.Component {
       return (<CreateHaiku url={this.props.url} />);
     }
   }
+  handleClick() {
+    this.setState({currentPage: 'create'})
+  }
   render() {
     return (
       <div className="app">
+        <button onClick={this.handleClick}>Create</button>
         <h1>Haiku Haven</h1>
         {this.properPage()}
       </div>
