@@ -24,6 +24,7 @@ class CreateHaiku extends React.Component {
       data: {haiku: newPost},
       cache: false,
       success: function(data) {
+        console.log(data);
         this.props.successfulPost();
       }.bind(this),
       error: function(xhr, status, err) {
