@@ -16,7 +16,20 @@ class CreateHaiku extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log("Holla!");
+    var newPost = {line1: this.state.line1, line2: this.state.line2, line3: this.state.line3}
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json', 
+      type: 'POST', 
+      data: {haiku: newPost},
+      cache: false,
+      success: function(data) {
+        this.props.successfulPost();
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.log(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   }
   render() {
     return (
