@@ -1,0 +1,22 @@
+.c-nav {
+  border-bottom: 1px solid gray;
+  height: 50px;
+}
+
+.c-nav__title:hover, .c-nav__list__li:hover {
+  cursor: pointer;
+}
+
+.c-nav__title {
+  float: left;
+}
+
+.c-nav__list {
+  float: right;
+}
+
+.c-nav__list__li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 15px;
+}
